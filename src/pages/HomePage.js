@@ -1,10 +1,48 @@
 import styled from "styled-components"
 import logo from "../assets/logo-completa.svg"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { ThreeDots } from "react-loader-spinner"
+import axios from "axios";
 
 export default function HomePage() {
 
-    function login(){
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const navigate = useNavigate()
+    const [disabled, setDisabled] = useState(false)
+    const [loading, setLoading] = useState("Login")
+
+    function login(event) {
+        event.preventDefault()
+
+        const requisicao = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",{
+            email:email,
+            password:password
+        })
+
+        setDisabled(true)
+        setLoading(<ThreeDots
+            height="45"
+            width="80"
+            radius="9"
+            color="#FFFFFF"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+        />)
+
+        requisicao.then((res) => {
+            navigate("/hoje")
+            console.log(res)
+
+        })
+
+        requisicao.catch((err) => {
+            setDisabled(false)
+            setLoading("Login")
+        })
 
     }
 
@@ -12,9 +50,11 @@ export default function HomePage() {
         <PageContainer>
             <img src={logo} alt={logo}></img>
             <form onSubmit={login}>
-                <input type="email" placeholder="email"></input>
-                <input type="password" placeholder="senha"></input>
-                <button type="submit"> Entrar</button>
+                <input disabled={disabled} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email"></input>
+                <input disabled={disabled} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha"></input>
+                <button disabled={disabled} type="submit">
+                    <div>{loading}</div>
+                </button>
             </form>
             <Link to="/cadastro">
                 <Register>Não tem uma conta? Cadastre-se!</Register>
@@ -43,10 +83,10 @@ const PageContainer = styled.div`
         font-weight: 400;
         font-size: 20px;
         line-height: 25px;
+        padding-left: 11px;
     }
     & ::placeholder{
         color: #dbdbdb;
-        padding-left: 11px;
     }
     & button{
         width: 303px;
@@ -63,6 +103,11 @@ const PageContainer = styled.div`
     }
     & img{
         margin-bottom: 36px;
+    }
+    & div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
 

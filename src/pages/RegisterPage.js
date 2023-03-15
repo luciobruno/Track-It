@@ -30,7 +30,7 @@ export default function RegisterPage() {
         setLoading(<ThreeDots 
             height="45" 
             width="80" 
-            radius="4"
+            radius="9"
             color="#FFFFFF" 
             ariaLabel="three-dots-loading"
             wrapperStyle={{}}
