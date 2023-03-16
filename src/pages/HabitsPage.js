@@ -1,12 +1,23 @@
 import styled from "styled-components"
-import indefinido from "../assets/indefinido.png"
+import { CircularProgressbar, buildStyles, } from 'react-circular-progressbar';
+import { useNavigate } from "react-router-dom";
+import UserContext from "../contexts/UserContext";
+import { useContext } from "react";
 
 export default function HabitsPage() {
+
+    const { dados,concluidos } = useContext(UserContext)
+    const navigate = useNavigate()
+
+    function pagina(page){
+        navigate(`/${page}`)
+    }
+
     return (
         <>
             <Topo>
                 <div>TrackIt</div>
-                <img src={indefinido} alt={indefinido}></img>
+                <img src={dados.image} alt={dados.image}></img>
             </Topo>
             <PageContainer>
                 <TitlePage>
@@ -34,9 +45,23 @@ export default function HabitsPage() {
                 </ContentPage>
             </PageContainer>
             <Menu>
-                <div>Hábitos</div>
-                <div>Hoje</div>
-                <div>Histórico</div>
+                <div onClick={()=>pagina("habitos")}>Hábitos</div>
+                <span style={{width: 100,height: 100}}>
+                    <CircularProgressbar
+                        value={concluidos}
+                        text={"Hoje"}
+                        background
+                        backgroundPadding={5}
+                        strokeWidth={8}
+                        styles={buildStyles({
+                            backgroundColor: "#52B6FF",
+                            textColor: "#fff",
+                            pathColor: "#fff",
+                            trailColor: "transparent"
+                        })}
+                    />
+                </span>
+                <div onClick={()=>pagina("historico")}>Histórico</div>
             </Menu>
         </>
 
@@ -184,7 +209,14 @@ const Menu = styled.div`
     line-height: 22px;
     text-align: center;
     color: #52B6FF;
-`
+    & span{
+        margin-bottom: 50px;
+        .CircularProgressbar-text{
+            text-anchor: middle;
+            alignment-baseline: middle;
+        }
+    }
+`   
 
 const TitlePage = styled.div`
     display: flex;

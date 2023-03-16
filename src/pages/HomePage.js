@@ -1,11 +1,14 @@
 import styled from "styled-components"
 import logo from "../assets/logo-completa.svg"
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ThreeDots } from "react-loader-spinner"
 import axios from "axios";
+import UserContext from "../contexts/UserContext";
 
 export default function HomePage() {
+
+    const {setDados} = useContext(UserContext)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -34,9 +37,9 @@ export default function HomePage() {
         />)
 
         requisicao.then((res) => {
-            navigate("/hoje")
-            console.log(res)
-
+            navigate("/habitos")
+            setDados(res.data)
+            console.log(res.data)
         })
 
         requisicao.catch((err) => {
