@@ -56,15 +56,15 @@ export default function RegisterPage() {
         <PageContainer>
             <img src={logo} alt={logo}></img>
             <form onSubmit={cadastrar}>
-                <input disabled={disabled} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email"></input>
-                <input disabled={disabled} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha"></input>
-                <input disabled={disabled} type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="nome"></input>
-                <input disabled={disabled} type="url" value={image} onChange={(e) => setImage(e.target.value)} placeholder="foto"></input>
-                <button disabled={disabled} type="submit">
+                <input data-test="email-input" disabled={disabled} type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email"></input>
+                <input data-test="password-input" disabled={disabled} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="senha"></input>
+                <input data-test="user-name-input" disabled={disabled} type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="nome"></input>
+                <input data-test="user-image-input" disabled={disabled} type="url" value={image} onChange={(e) => setImage(e.target.value)} placeholder="foto"></input>
+                <button data-test="signup-btn" disabled={disabled} type="submit">
                     <div>{loading}</div>  
                 </button>
             </form>
-            <Link to="/">
+            <Link data-test="login-link" to="/">
                 <Login>Já tem uma conta? Faça login!</Login>
             </Link>
         </PageContainer>

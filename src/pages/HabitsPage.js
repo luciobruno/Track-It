@@ -6,16 +6,16 @@ import { useContext } from "react";
 
 export default function HabitsPage() {
 
-    const { dados,concluidos } = useContext(UserContext)
+    const { dados, concluidos } = useContext(UserContext)
     const navigate = useNavigate()
 
-    function pagina(page){
+    function pagina(page) {
         navigate(`/${page}`)
     }
 
     return (
         <>
-            <Topo>
+            <Topo data-test="header">
                 <div>TrackIt</div>
                 <img src={dados.image} alt={dados.image}></img>
             </Topo>
@@ -44,9 +44,9 @@ export default function HabitsPage() {
                     <div>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>
                 </ContentPage>
             </PageContainer>
-            <Menu>
-                <div onClick={()=>pagina("habitos")}>Hábitos</div>
-                <span style={{width: 100,height: 100}}>
+            <Menu data-test="menu">
+                <div data-test="habit-link" onClick={() => pagina("habitos")}>Hábitos</div>
+                <span onClick={() => pagina("hoje")} data-test="today-link" style={{ width: 100, height: 100 }}>
                     <CircularProgressbar
                         value={concluidos}
                         text={"Hoje"}
@@ -61,7 +61,7 @@ export default function HabitsPage() {
                         })}
                     />
                 </span>
-                <div onClick={()=>pagina("historico")}>Histórico</div>
+                <div data-test="history-link" onClick={() => pagina("historico")}>Histórico</div>
             </Menu>
         </>
 
@@ -216,7 +216,7 @@ const Menu = styled.div`
             alignment-baseline: middle;
         }
     }
-`   
+`
 
 const TitlePage = styled.div`
     display: flex;
