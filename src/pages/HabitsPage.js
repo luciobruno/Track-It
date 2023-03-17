@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import UserContext from "../contexts/UserContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Topo from "../components/Topo";
 import Menu from "../components/Menu";
 import NewHabit from "../components/NewHabit";

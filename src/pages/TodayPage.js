@@ -1,22 +1,53 @@
 import styled from "styled-components"
 import UserContext from "../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Topo from "../components/Topo";
 import Menu from "../components/Menu";
+import dayjs from "dayjs";
+import HabitToday from "../components/HabitToday";
+import axios from "axios";
 
 export default function TodayPage() {
 
+    const { dados, habitsToday, setHabitsToday, concluidos } = useContext(UserContext)
+
+    const updateLocale = require('dayjs/plugin/updateLocale')
+    dayjs.extend(updateLocale)
+
+    dayjs.updateLocale('en',{
+        weekdays : ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado']
+    })
+
+    const date = dayjs().format('dddd, DD/MM')
+
+    useEffect(()=>{
+        const url = "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today"
+
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${dados.token}`
+            }
+        }
+
+        const promise = axios.get(url,config)
+
+        promise.then((res)=> {setHabitsToday(res.data)
+        })
+
+    },[habitsToday])
+
     return (
         <>
-            <Topo></Topo>
+            <Topo></Topo> 
             <PageContainer>
                 <TitlePage>
-                    <div>Meus hábitos</div>
-                    <button>+</button>
+                    <div>{date}</div>
                 </TitlePage>
                 <ContentPage>
-                    <div>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>
+                    <Text concluidos={concluidos}>Nenhum hábito concluído ainda</Text>
+                    <TextPercent concluidos={concluidos}>{(concluidos/habitsToday.length)*100}% dos hábitos concluídos</TextPercent>
                 </ContentPage>
+                {habitsToday.map((habit)=><HabitToday key={habit.id} id={habit.id} name={habit.name} current={habit.currentSequence} highest={habit.highestSequence} done={habit.done}></HabitToday>)}
             </PageContainer>
             <Menu></Menu>
         </>
@@ -35,16 +66,16 @@ const PageContainer = styled.div`
 
 const ContentPage = styled.div`
     display: flex;
-    margin-top: 28px;
     width: 338px;
-    height: 74px;
-    margin-right: 10px;
+    height: auto;
+    margin-top: 5px;
+    margin-right: 18px;
     font-family: 'Lexend Deca',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 17.976px;
     line-height: 22px;
-    color: #666666;
+    color: #BABABA;
 `
 const TitlePage = styled.div`
     display: flex;
@@ -76,4 +107,13 @@ const TitlePage = styled.div`
         color: #126BA5;
         margin-left: 17px;
     }
+`
+
+const Text = styled.div`
+    display: ${props => props.concluidos === 0 ? "flex" : "none"};
+`
+
+const TextPercent = styled.div`
+    display: ${props => props.concluidos === 0 ? "none" : "flex"};
+    color: #8FC549;
 `
