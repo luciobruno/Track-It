@@ -37,9 +37,8 @@ export default function HomePage() {
         />)
 
         requisicao.then((res) => {
-            navigate("/habitos")
+            navigate("/hoje")
             setDados(res.data)
-            console.log(res.data)
         })
 
         requisicao.catch((err) => {
