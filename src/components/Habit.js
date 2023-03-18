@@ -23,19 +23,19 @@ export default function Habit({ id, name, days }) {
     }
 
     return (
-        <HabitCard>
+        <HabitCard data-test="habit-container">
             <Title>
-                {name}
-                <ion-icon onClick={() => apagar()} name="trash-outline"></ion-icon>
+                <div data-test="habit-name">{name}</div>
+                <ion-icon data-test="habit-delete-btn" onClick={() => apagar()} name="trash-outline"></ion-icon>
             </Title>
             <Weekdays>
-                <Weekday days={days} day={7}>D</Weekday>
-                <Weekday days={days} day={1}>S</Weekday>
-                <Weekday days={days} day={2}>T</Weekday>
-                <Weekday days={days} day={3}>Q</Weekday>
-                <Weekday days={days} day={4}>Q</Weekday>
-                <Weekday days={days} day={5}>S</Weekday>
-                <Weekday days={days} day={6}>S</Weekday>
+                <Weekday data-test="habit-day" days={days} day={7}>D</Weekday>
+                <Weekday data-test="habit-day" days={days} day={1}>S</Weekday>
+                <Weekday data-test="habit-day" days={days} day={2}>T</Weekday>
+                <Weekday data-test="habit-day" days={days} day={3}>Q</Weekday>
+                <Weekday data-test="habit-day" days={days} day={4}>Q</Weekday>
+                <Weekday data-test="habit-day" days={days} day={5}>S</Weekday>
+                <Weekday data-test="habit-day" days={days} day={6}>S</Weekday>
             </Weekdays>
         </HabitCard>
     )

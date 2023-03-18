@@ -7,7 +7,7 @@ import UserContext from "../contexts/UserContext";
 export default function Menu() {
 
     const navigate = useNavigate()
-    const { concluidos } = useContext(UserContext)
+    const { concluidos, habitsToday } = useContext(UserContext)
 
     function pagina(page) {
         navigate(`/${page}`)
@@ -18,7 +18,8 @@ export default function Menu() {
             <div data-test="habit-link" onClick={() => pagina("habitos")}>Hábitos</div>
             <span onClick={() => pagina("hoje")} data-test="today-link" style={{ width: 100, height: 100 }}>
                 <CircularProgressbar
-                    value={concluidos}
+                    value={concluidos/habitsToday.length}
+                    maxValue={1}
                     text={"Hoje"}
                     background
                     backgroundPadding={5}

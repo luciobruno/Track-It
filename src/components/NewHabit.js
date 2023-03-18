@@ -68,20 +68,20 @@ export default function NewHabit() {
     }
 
     return (
-        <HabitCard disabled={disabled}>
-            <input value={habito} onChange={(e) => setHabito(e.target.value)} type="text" placeholder="nome do hábito"></input>
+        <HabitCard data-test="habit-create-container" disabled={disabled}>
+            <input data-test="habit-name-input" value={habito} onChange={(e) => setHabito(e.target.value)} type="text" placeholder="nome do hábito"></input>
             <Weekdays>
-                <Weekday dias={dias} dia={7} onClick={() => acrescentarDia(7)}>D</Weekday>
-                <Weekday dias={dias} dia={1} onClick={() => acrescentarDia(1)}>S</Weekday>
-                <Weekday dias={dias} dia={2} onClick={() => acrescentarDia(2)}>T</Weekday>
-                <Weekday dias={dias} dia={3} onClick={() => acrescentarDia(3)}>Q</Weekday>
-                <Weekday dias={dias} dia={4} onClick={() => acrescentarDia(4)}>Q</Weekday>
-                <Weekday dias={dias} dia={5} onClick={() => acrescentarDia(5)}>S</Weekday>
-                <Weekday dias={dias} dia={6} onClick={() => acrescentarDia(6)}>S</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={7} onClick={() => acrescentarDia(7)}>D</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={1} onClick={() => acrescentarDia(1)}>S</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={2} onClick={() => acrescentarDia(2)}>T</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={3} onClick={() => acrescentarDia(3)}>Q</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={4} onClick={() => acrescentarDia(4)}>Q</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={5} onClick={() => acrescentarDia(5)}>S</Weekday>
+                <Weekday data-test="habit-day" dias={dias} dia={6} onClick={() => acrescentarDia(6)}>S</Weekday>
             </Weekdays>
             <Buttons>
-                <button onClick={() => cancelar()}>Cancelar</button>
-                <button onClick={()=> salvar()}>{loading}</button>
+                <button data-test="habit-create-cancel-btn" onClick={() => cancelar()}>Cancelar</button>
+                <button data-test="habit-create-save-btn" onClick={()=> salvar()}>{loading}</button>
             </Buttons>
         </HabitCard>
     )

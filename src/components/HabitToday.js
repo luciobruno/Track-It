@@ -38,15 +38,15 @@ export default function HabitToday({ id, name, current, highest, done }) {
     }
 
     return (
-        <HabitCard>
+        <HabitCard data-test="today-habit-container">
             <ContentPage>
-                <Title>{name}</Title>
+                <Title data-test="today-habit-name">{name}</Title>
                 <Subtitle>
-                    <div>Sequência atual: <Current done={done}>{current} dias</Current></div>
-                    <div>Seu recorde: <Sequency highest={highest} current={current}>{highest} dias</Sequency></div>
+                    <div data-test="today-habit-sequence" >Sequência atual: <Current done={done}>{current} dias</Current></div>
+                    <div data-test="today-habit-record">Seu recorde: <Sequency highest={highest} current={current}>{highest} dias</Sequency></div>
                 </Subtitle>
             </ContentPage>
-            <Check done={done} onClick={() => checkar()}><ion-icon name="checkbox"></ion-icon></Check>
+            <Check data-test="today-habit-check-btn" done={done} onClick={() => checkar()}><ion-icon name="checkbox"></ion-icon></Check>
         </HabitCard>
     )
 }

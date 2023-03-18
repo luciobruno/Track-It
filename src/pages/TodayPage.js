@@ -41,9 +41,9 @@ export default function TodayPage() {
             <Topo></Topo> 
             <PageContainer>
                 <TitlePage>
-                    <div>{date}</div>
+                    <div data-test="today">{date}</div>
                 </TitlePage>
-                <ContentPage>
+                <ContentPage data-test="today-counter">
                     <Text concluidos={concluidos}>Nenhum hábito concluído ainda</Text>
                     <TextPercent concluidos={concluidos}>{(concluidos/habitsToday.length)*100}% dos hábitos concluídos</TextPercent>
                 </ContentPage>

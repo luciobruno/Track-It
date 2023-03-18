@@ -33,7 +33,7 @@ export default function HabitsPage() {
             <PageContainer>
                 <TitlePage>
                     <div>Meus hábitos</div>
-                    <button onClick={() => novoHabito()}>+</button>
+                    <button data-test="habit-create-btn" onClick={() => novoHabito()}>+</button>
                 </TitlePage>
                 {newHabit}
                 {habits.map((habit)=><Habit key={habit.id} id={habit.id} name={habit.name} days={habit.days}></Habit>)}
