@@ -124,7 +124,7 @@ const Weekdays = styled.div`
     margin-left: 19px;
 `
 
-const Weekday = styled.div`
+const Weekday = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
