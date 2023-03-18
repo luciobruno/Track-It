@@ -43,9 +43,7 @@ export default function RegisterPage() {
         })
 
         requisicao.catch((err) => {
-            if(err.response.data.details.length > 0){
-                alert("Por favor, preencha todos os campos")
-            }
+            console.log(err)
             setDisabled(false)
             setLoading("Cadastrar")
         })

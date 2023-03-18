@@ -15,10 +15,11 @@ export default function App() {
   const [dias, setDias] = useState([])
   const [habito, setHabito] = useState("");
   const [habits, setHabits] = useState([])
-  const [habitsToday, setHabitsToday] = useState([]);
+  const [habitsToday, setHabitsToday] = useState([]); 
+  const [disableNewHabit, setDisableNewHabit] = useState(false)
 
   return (
-    <UserContext.Provider value={{ dados, setDados, concluidos, setConcluidos, newHabit, setNewHabit, dias, setDias, habito, setHabito, habits, setHabits, habitsToday, setHabitsToday }}>
+    <UserContext.Provider value={{ disableNewHabit,setDisableNewHabit,dados, setDados, concluidos, setConcluidos, newHabit, setNewHabit, dias, setDias, habito, setHabito, habits, setHabits, habitsToday, setHabitsToday }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage></HomePage>}></Route>

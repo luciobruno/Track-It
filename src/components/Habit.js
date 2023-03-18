@@ -72,7 +72,7 @@ const Weekday = styled.div`
     border-radius: 5px;
     color: ${props => props.days.includes(props.day) ? "#ffffff" : "#dbdbdb"};
     border: 1px solid #d5d5d5;
-    background-color: ${props => props.days.includes(props.day) ? "#dbdbdb" : "#ffffff"};
+    background-color: ${props => props.days.includes(props.day) ? "#cfcfcf" : "#ffffff"};
     margin-right: 4px;
 `
 

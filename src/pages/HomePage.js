@@ -42,6 +42,7 @@ export default function HomePage() {
         })
 
         requisicao.catch((err) => {
+            alert(err)
             setDisabled(false)
             setLoading("Login")
         })

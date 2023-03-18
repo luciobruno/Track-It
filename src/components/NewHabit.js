@@ -6,10 +6,9 @@ import { ThreeDots } from "react-loader-spinner"
 
 export default function NewHabit() {
 
-    const { setNewHabit, dias, setDias, habito, setHabito, dados } = useContext(UserContext)
-    
-    const [loading,setLoading] = useState("Salvar")
-    const [ disabled,setDisabled] = useState(false)
+    const { setNewHabit, dias, setDias, habito, setHabito, dados, setDisableNewHabit } = useContext(UserContext)
+    const [ loading, setLoading] = useState("Salvar")
+    const [ disabled, setDisabled] = useState(false)
 
     function cancelar() {
         setNewHabit("");
@@ -54,14 +53,18 @@ export default function NewHabit() {
             visible={true}
         />)
         setDisabled(true)
+        setDisableNewHabit(true)
 
         promise.then(()=>{setDisabled(false)
+            setDisableNewHabit(false)
             setLoading("Salvar")
             setDias([])
             setHabito("")
+            setNewHabit("")
         })
 
         promise.catch((err)=>{alert("Corrija os dados")
+            setDisableNewHabit(false)
             setDisabled(false)
             setLoading("Salvar")
         })
@@ -69,19 +72,19 @@ export default function NewHabit() {
 
     return (
         <HabitCard data-test="habit-create-container" disabled={disabled}>
-            <input data-test="habit-name-input" value={habito} onChange={(e) => setHabito(e.target.value)} type="text" placeholder="nome do hábito"></input>
+            <input disabled={disabled} data-test="habit-name-input" value={habito} onChange={(e) => setHabito(e.target.value)} type="text" placeholder="nome do hábito"></input>
             <Weekdays>
-                <Weekday data-test="habit-day" dias={dias} dia={7} onClick={() => acrescentarDia(7)}>D</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={1} onClick={() => acrescentarDia(1)}>S</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={2} onClick={() => acrescentarDia(2)}>T</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={3} onClick={() => acrescentarDia(3)}>Q</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={4} onClick={() => acrescentarDia(4)}>Q</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={5} onClick={() => acrescentarDia(5)}>S</Weekday>
-                <Weekday data-test="habit-day" dias={dias} dia={6} onClick={() => acrescentarDia(6)}>S</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={7} onClick={() => acrescentarDia(7)}>D</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={1} onClick={() => acrescentarDia(1)}>S</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={2} onClick={() => acrescentarDia(2)}>T</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={3} onClick={() => acrescentarDia(3)}>Q</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={4} onClick={() => acrescentarDia(4)}>Q</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={5} onClick={() => acrescentarDia(5)}>S</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={6} onClick={() => acrescentarDia(6)}>S</Weekday>
             </Weekdays>
             <Buttons>
-                <button data-test="habit-create-cancel-btn" onClick={() => cancelar()}>Cancelar</button>
-                <button data-test="habit-create-save-btn" onClick={()=> salvar()}>{loading}</button>
+                <button disabled={disabled} data-test="habit-create-cancel-btn" onClick={() => cancelar()}>Cancelar</button>
+                <button disabled={disabled} data-test="habit-create-save-btn" onClick={()=> salvar()}>{loading}</button>
             </Buttons>
         </HabitCard>
     )
@@ -130,7 +133,7 @@ const Weekday = styled.div`
     border-radius: 5px;
     color: ${props => props.dias.includes(props.dia) ? "#ffffff" : "#dbdbdb"};
     border: 1px solid #d5d5d5;
-    background-color: ${props => props.dias.includes(props.dia) ? "#dbdbdb" : "#ffffff"};
+    background-color: ${props => props.dias.includes(props.dia) ? "#CFCFCF" : "#ffffff"};
     border-radius: 5px;
     margin-right: 4px;
 `
