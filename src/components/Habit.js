@@ -29,7 +29,7 @@ export default function Habit({ id, name, days }) {
                 <ion-icon data-test="habit-delete-btn" onClick={() => apagar()} name="trash-outline"></ion-icon>
             </Title>
             <Weekdays>
-                <Weekday data-test="habit-day" days={days} day={7}>D</Weekday>
+                <Weekday data-test="habit-day" days={days} day={0}>D</Weekday>
                 <Weekday data-test="habit-day" days={days} day={1}>S</Weekday>
                 <Weekday data-test="habit-day" days={days} day={2}>T</Weekday>
                 <Weekday data-test="habit-day" days={days} day={3}>Q</Weekday>
@@ -71,7 +71,7 @@ const Weekday = styled.div`
     height: 30px;
     border-radius: 5px;
     color: ${props => props.days.includes(props.day) ? "#ffffff" : "#dbdbdb"};
-    border: 1px solid #d5d5d5;
+    border: 1px solid #CFCFCF;
     background-color: ${props => props.days.includes(props.day) ? "#cfcfcf" : "#ffffff"};
     margin-right: 4px;
 `

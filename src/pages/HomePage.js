@@ -112,6 +112,11 @@ const PageContainer = styled.div`
         justify-content: center;
         align-items: center;
     }
+    & form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const Register = styled.div`

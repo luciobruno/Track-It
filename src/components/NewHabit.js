@@ -63,7 +63,7 @@ export default function NewHabit() {
             setNewHabit("")
         })
 
-        promise.catch((err)=>{alert("Corrija os dados")
+        promise.catch((err)=>{alert(err)
             setDisableNewHabit(false)
             setDisabled(false)
             setLoading("Salvar")
@@ -74,7 +74,7 @@ export default function NewHabit() {
         <HabitCard data-test="habit-create-container" disabled={disabled}>
             <input disabled={disabled} data-test="habit-name-input" value={habito} onChange={(e) => setHabito(e.target.value)} type="text" placeholder="nome do hábito"></input>
             <Weekdays>
-                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={7} onClick={() => acrescentarDia(7)}>D</Weekday>
+                <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={0} onClick={() => acrescentarDia(0)}>D</Weekday>
                 <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={1} onClick={() => acrescentarDia(1)}>S</Weekday>
                 <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={2} onClick={() => acrescentarDia(2)}>T</Weekday>
                 <Weekday disabled={disabled} data-test="habit-day" dias={dias} dia={3} onClick={() => acrescentarDia(3)}>Q</Weekday>

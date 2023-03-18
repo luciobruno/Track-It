@@ -43,8 +43,8 @@ export default function RegisterPage() {
         })
 
         requisicao.catch((err) => {
-            console.log(err)
-            setDisabled(false)
+            alert(err)
+            setDisabled(false)  
             setLoading("Cadastrar")
         })
 
@@ -113,6 +113,11 @@ const PageContainer = styled.div`
     & div{
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+    & form{
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 `
