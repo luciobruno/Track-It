@@ -9,7 +9,7 @@ import axios from "axios";
 
 export default function TodayPage() {
 
-    const { dados, habitsToday, setHabitsToday, concluidos } = useContext(UserContext)
+    const { dados, habitsToday, setHabitsToday, concluidos, setConcluidos } = useContext(UserContext)
 
     const updateLocale = require('dayjs/plugin/updateLocale')
     dayjs.extend(updateLocale)
@@ -35,6 +35,10 @@ export default function TodayPage() {
         })
 
     },[habitsToday])
+
+    if(habitsToday.length===0){
+        setConcluidos(0)
+    }
 
     return (
         <>

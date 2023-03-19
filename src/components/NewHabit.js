@@ -44,7 +44,7 @@ export default function NewHabit() {
 
         setLoading(<ThreeDots
             height="35"     
-            width="54"
+            width="84"
             radius="5"
             color="#FFFFFF"
             ariaLabel="three-dots-loading"
@@ -144,6 +144,7 @@ const Buttons = styled.div`
     margin-right: 20px;
     margin-top: 19px;
     padding-bottom: 15px;
+    text-align: center;
     & button:nth-child(1){
         width: 84px;
         height: 35px;

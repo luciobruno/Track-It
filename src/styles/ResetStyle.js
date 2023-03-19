@@ -46,4 +46,4 @@ const ResetStyle = createGlobalStyle`
 	}
 `
 
-export default ResetStyle
+export default ResetStyle;
