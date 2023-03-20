@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import HabitsPage from "./pages/HabitsPage";
 import UserContext from "./contexts/UserContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HistoricPage from "./pages/HistoricPage";
 import TodayPage from "./pages/TodayPage";
 

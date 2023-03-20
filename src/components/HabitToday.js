@@ -1,11 +1,11 @@
 import axios from "axios"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import styled from "styled-components"
 import UserContext from "../contexts/UserContext"
 
 export default function HabitToday({ id, name, current, highest, done }) {
 
-    const {dados, concluidos, setConcluidos} = useContext(UserContext)
+    const {dados, concluidos, setConcluidos, habitsToday} = useContext(UserContext)
 
     function checkar() {
         if (done === false){
@@ -19,8 +19,7 @@ export default function HabitToday({ id, name, current, highest, done }) {
                 }
             }
             const promise = axios.post(url,body,config)
-            promise.then()
-            setConcluidos(concluidos+1)
+            promise.then(()=>{})
         }else{
             const url = `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`
             
@@ -32,8 +31,7 @@ export default function HabitToday({ id, name, current, highest, done }) {
                 }
             }
             const promise = axios.post(url,body,config)
-            promise.then()
-            setConcluidos(concluidos-1)  
+            promise.then(()=>{})
         }
     }
 

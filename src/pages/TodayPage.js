@@ -32,13 +32,15 @@ export default function TodayPage() {
         const promise = axios.get(url,config)
 
         promise.then((res)=> {setHabitsToday(res.data)
+            if(habitsToday.length ===0){
+                setConcluidos(0)
+            }else{
+                const conclusao = (habitsToday.filter(habit => habit.done === true)).length
+                setConcluidos(conclusao)
+            } 
         })
 
     },[habitsToday])
-
-    if(habitsToday.length===0){
-        setConcluidos(0)
-    }
 
     return (
         <>
@@ -47,9 +49,9 @@ export default function TodayPage() {
                 <TitlePage>
                     <div data-test="today">{date}</div>
                 </TitlePage>
-                <ContentPage>
-                    <Text data-test="today-counter" concluidos={concluidos}>Nenhum hábito concluído ainda</Text>
-                    <TextPercent data-test="today-counter" concluidos={concluidos}>{(concluidos/habitsToday.length)*100}% dos hábitos concluídos</TextPercent>
+                <ContentPage data-test="today-counter">
+                    <Text concluidos={concluidos}>Nenhum hábito concluído ainda</Text>
+                    <TextPercent concluidos={concluidos}>{(concluidos/habitsToday.length)*100}% dos hábitos concluídos</TextPercent>
                 </ContentPage>
                 {habitsToday.map((habit)=><HabitToday key={habit.id} id={habit.id} name={habit.name} current={habit.currentSequence} highest={habit.highestSequence} done={habit.done}></HabitToday>)}
             </PageContainer>
