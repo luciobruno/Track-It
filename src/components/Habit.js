@@ -70,10 +70,15 @@ const Weekday = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 5px;
-    color: ${props => props.days.includes(props.day) ? "#ffffff" : "#dbdbdb"};
-    border: 1px solid ${props => props.days.includes(props.day) ? "#cfcfcf" : "#d5d5d5"};
-    background-color: ${props => props.days.includes(props.day) ? "#cfcfcf" : "#ffffff"};
+    color: ${props => props.days.includes(props.day) ? "#FFFFFF" : "#DBDBDB"};
+    border: 1px solid ${props => props.days.includes(props.day) ? "#CFCFCF" : "#D5D5D5"};
+    background-color: ${props => props.days.includes(props.day) ? "#CFCFCF" : "#FFFFFF"};
     margin-right: 4px;
+    font-family: 'Lexend Deca',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.976px;
+    line-height: 25px;
 `
 
 const Title = styled.div`

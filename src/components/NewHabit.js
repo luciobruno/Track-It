@@ -131,11 +131,16 @@ const Weekday = styled.button`
     width: 30px;
     height: 30px;
     border-radius: 5px;
-    color: ${props => props.dias.includes(props.dia) ? "#ffffff" : "#dbdbdb"};
-    border: 1px solid ${props => props.dias.includes(props.dia) ? "#cfcfcf" : "#d5d5d5"};;
-    background-color: ${props => props.dias.includes(props.dia) ? "#CFCFCF" : "#ffffff"};
+    color: ${props => props.dias.includes(props.dia) ? "#FFFFFF" : "#DBDBDB"};
+    border: 1px solid ${props => props.dias.includes(props.dia) ? "#CFCFCF" : "#D5D5D5"};;
+    background-color: ${props => props.dias.includes(props.dia) ? "#CFCFCF" : "#FFFFFF"};
     border-radius: 5px;
     margin-right: 4px;
+    font-family: 'Lexend Deca',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.976px;
+    line-height: 25px;
 `
 
 const Buttons = styled.div`
