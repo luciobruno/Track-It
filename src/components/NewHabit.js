@@ -132,7 +132,7 @@ const Weekday = styled.button`
     height: 30px;
     border-radius: 5px;
     color: ${props => props.dias.includes(props.dia) ? "#ffffff" : "#dbdbdb"};
-    border: 1px solid #d5d5d5;
+    border: 1px solid ${props => props.dias.includes(props.dia) ? "#cfcfcf" : "#d5d5d5"};;
     background-color: ${props => props.dias.includes(props.dia) ? "#CFCFCF" : "#ffffff"};
     border-radius: 5px;
     margin-right: 4px;

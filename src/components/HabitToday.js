@@ -1,11 +1,11 @@
 import axios from "axios"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import styled from "styled-components"
 import UserContext from "../contexts/UserContext"
 
 export default function HabitToday({ id, name, current, highest, done }) {
 
-    const {dados, concluidos, setConcluidos, habitsToday} = useContext(UserContext)
+    const {dados} = useContext(UserContext)
 
     function checkar() {
         if (done === false){
