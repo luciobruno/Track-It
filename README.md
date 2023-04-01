@@ -4,6 +4,12 @@ Try it out now at https://projeto11-trackit-buxayte3d-luciobruno.vercel.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# About this Project
+
+# Built With
+
+# Getting Started
+
 ## Available Scripts
 
 In the project directory, you can run:
