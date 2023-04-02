@@ -1,6 +1,6 @@
 # Track It
 
-Try it out now at https://projeto11-trackit-buxayte3d-luciobruno.vercel.app
+Try it out now at https://trackit-nine-black.vercel.app
 
 # About this Project
 
