@@ -1,12 +1,12 @@
 # Track It
 
-Try it out now at https://trackit-nine-black.vercel.app
+Experimente agora em https://trackit-nine-black.vercel.app
 
-# About this Project
+# Sobre este Projeto
 
-# Technologies
+# Tecnologias
 
-The following tools and frameworks were used in the construction of the project:
+As seguintes ferramentas e estruturas foram utilizadas na construção deste projeto:
 
 [<img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" />](https://www.npmjs.com)
 [<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />](https://legacy.reactjs.org/docs/getting-started.html)
@@ -19,19 +19,19 @@ The following tools and frameworks were used in the construction of the project:
 [<img src="https://img.shields.io/badge/day.js%20-%2320232a.svg?style=for-the-badge&color=FF604D" />](https://day.js.org)
 [<img src="https://img.shields.io/badge/react_loader_spinner%20-%2320232a.svg?style=for-the-badge&color=black" />](https://www.npmjs.com/package/react-loader-spinner)
 [<img src="https://img.shields.io/badge/react_circular_progressbar%20-%2320232a.svg?style=for-the-badge&color=gray" />](https://www.npmjs.com/package/react-circular-progressbar)
-# Getting Started
+# Começando
 
-1. Clone this repository
-2. Install dependencies
+1. Clone este repositório
+2. Instale as dependências
 ```bash
 npm i
 ```
-3. Run the front-end with
+3. Inicie o front-end com
 ```bash
 npm start
 ```
-4. You can optionally build the project running
+4. Opcionalmente, você pode compilar o projeto executando
 ```bash
 npm run build
 ```
-5. Finally access http://localhost:3000 on your favorite browser (unless it is Internet Explorer. In this case, review your life decisions)
+5. Por fim, acesse http://localhost:3000 no seu navegador favorito (a menos que seja o Internet Explorer. Nesse caso, pode dar erro)
