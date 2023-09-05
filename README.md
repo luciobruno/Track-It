@@ -19,7 +19,7 @@ As seguintes ferramentas e estruturas foram utilizadas na construção deste pro
 [<img src="https://img.shields.io/badge/day.js%20-%2320232a.svg?style=for-the-badge&color=FF604D" />](https://day.js.org)
 [<img src="https://img.shields.io/badge/react_loader_spinner%20-%2320232a.svg?style=for-the-badge&color=black" />](https://www.npmjs.com/package/react-loader-spinner)
 [<img src="https://img.shields.io/badge/react_circular_progressbar%20-%2320232a.svg?style=for-the-badge&color=gray" />](https://www.npmjs.com/package/react-circular-progressbar)
-# Começando
+# Como executar
 
 1. Clone este repositório
 2. Instale as dependências
