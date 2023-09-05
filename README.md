@@ -4,6 +4,18 @@ Experimente agora em https://trackit-nine-black.vercel.app
 
 # Sobre este Projeto
 
+Esta é uma aplicação web com a qual muitas pessoas podem organizar, gerir e acompanhar os seus hábitos. Abaixo estão as funcionalidades implementadas:
+
+- Cadastro
+- Login
+- Listar todos os seus hábitos semanais com os respectivos dias
+- Adicionar novos hábitos
+- Visualizar seus hábitos no dia atual
+- Visualizar o progresso dos hábitos feitos no dia
+- Visualizar o histórico de hábitos já realizados ou não
+
+utilizando esse aplicativo você tem a vantagem de acompanhar seus hábitos de forma eficiente, com a capacidade de registrar e visualizar seu progresso ao longo do tempo de forma automatizada.
+
 # Tecnologias
 
 As seguintes ferramentas e estruturas foram utilizadas na construção deste projeto:
