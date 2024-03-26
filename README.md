@@ -34,9 +34,7 @@ As seguintes ferramentas e estruturas foram utilizadas na construção deste pro
 [<img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" />](https://code.visualstudio.com)
 [<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />](https://styled-components.com)
 [<img src="https://img.shields.io/badge/axios%20-%2320232a.svg?style=for-the-badge&color=informational" />](https://axios-http.com/ptbr/docs/intro)
-[<img src="https://img.shields.io/badge/day.js%20-%2320232a.svg?style=for-the-badge&color=FF604D" />](https://day.js.org)
-[<img src="https://img.shields.io/badge/react_loader_spinner%20-%2320232a.svg?style=for-the-badge&color=black" />](https://www.npmjs.com/package/react-loader-spinner)
-[<img src="https://img.shields.io/badge/react_circular_progressbar%20-%2320232a.svg?style=for-the-badge&color=gray" />](https://www.npmjs.com/package/react-circular-progressbar)
+
 # Como executar
 
 1. Clone este repositório
